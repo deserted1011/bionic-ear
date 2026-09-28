@@ -1,37 +1,43 @@
-# 仿生之耳
+# 仿生之耳 · 远场目标说话人精准提取
 
-#### 介绍
-远场目标说话人精准提取系统
+华为「难题 4：远场目标说话人精准提取」课题成果，面向 iCAN 竞赛的演示程序。
 
-#### 软件架构
-软件架构说明
+## 下载
 
+完整演示程序在 **发行版（Releases）** 里，点击右侧 Releases 进入下载：
 
-#### 安装教程
+**→ [v1.0 下载页](https://gitee.com/deserted1011/bionic-ear/releases)**
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+附件是一个完整的免安装包，**不需要装 Python、不需要装显卡驱动、不需要联网**。
 
-#### 使用说明
+## 怎么用
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1. 解压 zip（如果分卷，先下载全部 part，双击 `合并.bat`，再解压）
+2. 双击 `仿生之耳.exe`，会自动打开浏览器窗口
+3. 网页里选一段录音（自带 18 条样本在 `素材\` 里），点「开始分离」
+4. 在「试听对比」里先听原始参考麦，再听分离后的两路
 
-#### 参与贡献
+硬要求：至少 3 声道，前 3 路是 2 cm 间距的线性三麦。
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+## 包里有什么
 
+| 目录 | 说明 |
+|---|---|
+| `仿生之耳.exe` / `启动.bat` | 启动入口 |
+| `诊断.bat` | 出问题先双击这个，逐项打印检查结果 |
+| `runtime/` | 运行环境（Python + torch/numpy/scipy），不要删、不要改 |
+| `app/` | 程序本体（分离引擎、网页界面、模型） |
+| `素材/` | 18 条演示样本 |
+| `结果/` | 分离结果输出到这里 |
+| `使用说明.txt` | 详细使用文档 |
 
-#### 特技
+## 技术要点
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+- 单一音频模态、3–4 麦克风、16 kHz
+- 分离骨干：空间分支 Conv-TasNet
+- 全流程本地运行，网页只监听 127.0.0.1，不上传任何音频
+
+## 许可
+
+演示样本由 LibriSpeech（CC BY 4.0）仿真生成。
+运行环境中的第三方组件许可声明见 `THIRD_PARTY_LICENSES.md`。

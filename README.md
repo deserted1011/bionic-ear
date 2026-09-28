@@ -6,23 +6,22 @@
 
 ## 下载
 
-完整演示程序在 **发行版（Releases）** 里：
+完整演示程序在 **发行版（Releases）** 里，两个站点内容完全一致，哪个能打开就用哪个：
 
-**→ [v1.0 下载页](https://gitee.com/deserted1011/bionic-ear/releases/tag/v1.0)**
+| 站点 | 怎么下 |
+|---|---|
+| **GitHub** | [v1.0 发行版](https://github.com/deserted1011/bionic-ear/releases/tag/v1.0) → 下载 `bionic-ear.zip`（229 MB，**单个文件，不用合并**） |
+| **Gitee** | [v1.0 发行版](https://gitee.com/deserted1011/bionic-ear/releases/tag/v1.0) → 下载 `part01`、`part02`、`part03`、`合并.bat`（受 100 MB 附件上限切成了 3 个分卷，需要合并） |
 
-> 请下载该页面上方的 **4 个附件**：`bionic-ear.part01`、`part02`、`part03` 和 `合并.bat`。
-> 页面下方的「Source code (zip / tar.gz)」是 Gitee 自动生成的源码包，只有一个 README，与演示程序无关，**无需下载**。
+> 两个页面下方的「Source code (zip / tar.gz)」是平台自动生成的源码包，里面只有本说明和第三方许可声明，与演示程序无关，**无需下载**。
 
-| 附件 | 大小 | 用途 |
-|---|---|---|
-| `bionic-ear.part01` | 95 MB | 分卷 1 |
-| `bionic-ear.part02` | 95 MB | 分卷 2 |
-| `bionic-ear.part03` | 39.3 MB | 分卷 3 |
-| `合并.bat` | 1 KB | 把三个分卷拼回完整压缩包 |
+拿到包之后校验（可选）：该 zip 的 SHA256 应为
+`F9B549B86D10BCE6FBBEC722EBFE333E83F5E8E41ABD3FFB8F5E523344E4DAB7`
+（压缩包 229.3 MB，解压后约 730 MB）
 
-因为 Gitee 单个附件不能超过 100 MB，完整包被切成了三个分卷，请把 **4 个文件全部下载到同一个文件夹**。
+### 如果你走的是 Gitee（分卷下载）
 
-### 第 1 步：解除文件锁定（建议先做）
+#### 第 1 步：解除文件锁定（建议先做）
 
 从网上下载的文件会被 Windows 打上「来自互联网」标记，双击时会弹蓝色的「Windows 已保护你的电脑」。**先解锁，后面全程不再弹窗。**
 
@@ -33,7 +32,7 @@
 Get-ChildItem -File | Unblock-File
 ```
 
-### 第 2 步：合并分卷
+#### 第 2 步：合并分卷
 
 **方法一（推荐）**：双击 `合并.bat`，同目录下自动生成 `bionic-ear.zip`。
 
@@ -42,10 +41,6 @@ Get-ChildItem -File | Unblock-File
 ```bat
 copy /b bionic-ear.part01+bionic-ear.part02+bionic-ear.part03 bionic-ear.zip
 ```
-
-合并后得到 `bionic-ear.zip`（229.3 MB），解压后约 730 MB。
-校验（可选）：该 zip 的 SHA256 应为
-`F9B549B86D10BCE6FBBEC722EBFE333E83F5E8E41ABD3FFB8F5E523344E4DAB7`
 
 ## 怎么用
 

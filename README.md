@@ -113,6 +113,11 @@ Windows 11 的「智能应用控制」只放行有数字签名、且云端有信
 
 © 2026 仿生之耳　保留所有权利，仅供竞赛评审使用。
 
+#### 本仓库为参赛作品交付包：可运行软件、使用说明与演示素材。  
+#### 内层模型源代码（数据生成、训练与评测脚本）请见：  
+GitHub：https://github.com/deserted1011/ConvTasNet-Spatial  
+Gitee ：https://gitee.com/deserted1011/ConvTasNet-Spatial  
+
 ## 队伍信息
 
 | 项目 | 仿生之耳 远场目标说话人精准提取系统 |
